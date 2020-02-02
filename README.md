@@ -27,4 +27,6 @@ O objetivo desse projeto é fornecer um template básico com funcionalidades que
 
 ## License
 
-Danilo Sampaio MIT License.
+MIT License
+
+Copyright (c) 2020 Danilo Sampaio
