@@ -14,6 +14,7 @@ O objetivo desse projeto é fornecer um template básico com funcionalidades que
 3. Notificações
 
 ## Frameworks/libs
+> Os itens abaixo ainda podem ser revisados, tendo em vista que o projeto está em fase de gestação.
 
 1. React-native
 
