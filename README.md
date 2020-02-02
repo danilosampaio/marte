@@ -17,12 +17,16 @@ O objetivo desse projeto é fornecer um template básico com funcionalidades que
 > Os itens abaixo ainda podem ser revisados, tendo em vista que o projeto está em fase de gestação.
 
 1. React-native
+  > framework para desenvolvimento de aplicativo mobile cross-platform.
 
 2. React-native-elements
+  > biblioteca de componentes para construção de interfaces: botões, inputs, etc.
 
 3. Facebook SDK
+  > Biblioteca para autenticação utilizando conta do facebook
 
 4. Firebase
+  > plataforma/infra-estrutura utilizada na implementação das notificações push. 
 
 ## Install and run
 
