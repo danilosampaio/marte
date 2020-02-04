@@ -30,7 +30,23 @@ O objetivo desse projeto é fornecer um template básico com funcionalidades que
 
 ## Install and run
 
-Instruções de instação e execução do aplicativo
+> Antes de instalar/executar o projeto, veja se seu ambiente de desenvolvimento e execução está pronto, confome itens __1__ e __2__ da seção __Setup do projeto__
+
+```sh
+git clone git@github.com:danilosampaio/marte.git
+```
+
+```sh
+npm install
+```
+
+```sh
+npm start
+```
+
+```sh
+npx react-native run-android
+```
 
 ## Passo à passo de construção do projeto
 > Essa seção descreve como todas as funcionalidades foram configuradas e construídas, permitindo um entendimento para construir outras aplicações à partir desse template.
@@ -43,9 +59,9 @@ Instruções de instação e execução do aplicativo
 
   2. Ambiente de execução
 
-  - Para executar o aplitivo em um dispositivo físico, siga o guia [Running On Device](https://facebook.github.io/react-native/docs/running-on-device)
+  - Para executar o aplicativo em um dispositivo físico, siga o guia [Running On Device](https://facebook.github.io/react-native/docs/running-on-device)
 
-  - Para executar o aplitivo em um dispositivo virtual, siga o guia [Criar e gerenciar dispositivos virtuais](https://developer.android.com/studio/run/managing-avds.html)
+  - Para executar o aplicativo em um dispositivo virtual, siga o guia [Criar e gerenciar dispositivos virtuais](https://developer.android.com/studio/run/managing-avds.html)
 
   3. Criando o projeto utlizando o `react-native-cli`
 
@@ -53,12 +69,12 @@ Instruções de instação e execução do aplicativo
   npx react-native init marte --template react-native-template-typescript
   ```
 
-  4. Executar aplitivo
+  4. Executar aplicativo
 
   ```sh
   npx react-native run-android
   ```
-  > o comando `run-android` instala o aplitivo no no dispositivo, mas para que as alterações no código fonte sejam publicadas automaticamente (hot reload) é necessário configurar o `adb reverse` conforme o [guia](https://facebook.github.io/react-native/docs/running-on-device#connecting-to-the-development-server-1), bem como executar o Metro server:
+  > o comando `run-android` instala o aplicativo no no dispositivo, mas para que as alterações no código fonte sejam publicadas automaticamente (hot reload) é necessário configurar o `adb reverse` conforme o [guia](https://facebook.github.io/react-native/docs/running-on-device#connecting-to-the-development-server-1), bem como executar o Metro server:
 
   ```sh
   npm start
