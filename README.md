@@ -82,6 +82,24 @@ npx react-native run-android
 
   5. Pronto, temos o setup inicial para adicionar novas funcionalidades.
 
+### Kit UI react-native-elements
+> Iremos utilizar a biblioteca de componentes `react-native-elements` na construção das interfaces.
+
+```sh
+npm i react-native-elements --save
+```
+
+```sh
+npm i --save react-native-vector-icons
+```
+
+Para funcionar corretamente no android, é necessário fazer a seguinte configuração:
+
+  - Adicione a seguinte linha no arquivo `android/app/build.gradle` ( NÃO `android/build.gradle` ):
+
+  ```sh
+  apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+  ```
 
 ## Contributing
 
