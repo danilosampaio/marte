@@ -32,6 +32,41 @@ O objetivo desse projeto é fornecer um template básico com funcionalidades que
 
 Instruções de instação e execução do aplicativo
 
+## Passo à passo de construção do projeto
+> Essa seção descreve como todas as funcionalidades foram configuradas e construídas, permitindo um entendimento para construir outras aplicações à partir desse template.
+
+### Setup do projeto
+
+  1. Ambiente de desenvolvimento
+    
+  Antes de qualquer coisa, precisamos configurar o ambiente de desenvolvimento, e instalar as ferramentas necessárias. A própria [documentação](https://facebook.github.io/react-native/docs/getting-started) no react-native descreve bem cada opção (linux, windows, android, iOS) e um guia para cada um, por isso é desnecessário duplicar as informações aqui. Considerando que o ambiente Android (JDK, Android SDK, Android Studio) está ok, vamos preparar o ambiente de execução.
+
+  2. Ambiente de execução
+
+  - Para executar o aplitivo em um dispositivo físico, siga o guia [Running On Device](https://facebook.github.io/react-native/docs/running-on-device)
+
+  - Para executar o aplitivo em um dispositivo virtual, siga o guia [Criar e gerenciar dispositivos virtuais](https://developer.android.com/studio/run/managing-avds.html)
+
+  3. Criando o projeto utlizando o `react-native-cli`
+
+  ```sh
+  npx react-native init marte --template react-native-template-typescript
+  ```
+
+  4. Executar aplitivo
+
+  ```sh
+  npx react-native run-android
+  ```
+  > o comando `run-android` instala o aplitivo no no dispositivo, mas para que as alterações no código fonte sejam publicadas automaticamente (hot reload) é necessário configurar o `adb reverse` conforme o [guia](https://facebook.github.io/react-native/docs/running-on-device#connecting-to-the-development-server-1), bem como executar o Metro server:
+
+  ```sh
+  npm start
+  ```
+
+  5. Pronto, temos o setup inicial para adicionar novas funcionalidades.
+
+
 ## Contributing
 
 Todos são bem vindos à contribuir com o projeto, seja com o codificação, documentação, ou sugestões. Algumas premissas importantes:
