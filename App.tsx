@@ -1,9 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { SocialIcon } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import FBLoginButton from './components/FBLoginButton';
+import UserProfileData from './types/UserProfileData';
+
 const App = () => {
+  const [userProfile, setUserProfile] = useState();
+
+  const setUserInfo = (data:UserProfileData) => {
+    setUserProfile(data);
+    alert(JSON.stringify(userProfile));
+  }
+
   return (
     <View style={styles.mainView}>
       <View style={styles.topArea} />
@@ -18,13 +28,9 @@ const App = () => {
         </Text>
       </View>
       <View style={styles.facebookButton}>
-        <SocialIcon
-          title='Entrar com Facebook'
-          button
-          type='facebook'
-        />
+        <FBLoginButton
+          onResponse={setUserInfo}/>
       </View>
-
     </View>
   );
 };

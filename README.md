@@ -101,6 +101,18 @@ Para funcionar corretamente no android, é necessário fazer a seguinte configur
   apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
   ```
 
+## Facebook login
+> Para permitir que seu aplicativo autentique os usuários utilizando a conta do facebook, é necessário cadastrar o aplicativo na plataforma do facebook. O [guia oficial](https://developers.facebook.com/docs/facebook-login/android) descreve o passo à passo para criar e configurar seu aplicativo. O único detalhe que o guia não deixa claro é referente a geração do Hash de chave do ambiente de desenvolvimento. O seguinte o comando deve ser executado para gerar um hash:
+
+```sh
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+```
+
+O ponto importante aqui é: o path do arquivo `~/.android/debug.keystore` na verdade deve ser o arquivo gerado pelo react-native-cli, que ficam em `./android/app/debug.keystore`, considerando que você está na raiz do projeto.
+Outro detalhe é que a partir do passo `8. Adicione o botão login do Facebook`, não é relevante para o nosso projeto, pois não estamos utilizando a API Java para codificar.
+
+A autenticação do usuário e a recuperação de informações como nome, email, foto, está implementada no component [FBLoginButton](components/FBLoginButton.tsx).
+
 ## Contributing
 
 Todos são bem vindos à contribuir com o projeto, seja com o codificação, documentação, ou sugestões. Algumas premissas importantes:

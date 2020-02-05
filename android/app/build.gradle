@@ -189,6 +189,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation 'com.facebook.android:facebook-login:[5,6)'
 }
 
 // Run this once to be able to run the application with BUCK
