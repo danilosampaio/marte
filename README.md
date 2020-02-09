@@ -28,6 +28,9 @@ O objetivo desse projeto é fornecer um template básico com funcionalidades que
 4. Firebase
   > plataforma/infra-estrutura utilizada na implementação das notificações push. 
 
+5. React-navigation
+  > Biblioteca que facilita a implementação da navegação entre telas.
+
 ## Install and run
 
 > Antes de instalar/executar o projeto, veja se seu ambiente de desenvolvimento e execução está pronto, confome itens __1__ e __2__ da seção __Setup do projeto__
