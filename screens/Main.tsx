@@ -26,7 +26,7 @@ const Main = ({route}) => {
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
+        activeTintColor: '#23546A',
         inactiveTintColor: 'gray',
       }}>
       <Tab.Screen name="Home" component={Home} />

@@ -14,10 +14,6 @@ function Settings({route}) {
       title: 'Editar',
       icon: 'edit',
     },
-    {
-      title: 'Sair',
-      icon: 'close',
-    },
   ];
 
   return (
@@ -27,6 +23,7 @@ function Settings({route}) {
         source={{
           uri: userProfile.picture.data.url,
         }}
+        size="large"
       />
       <Text>{userProfile.name}</Text>
       <Text>{userProfile.email}</Text>
@@ -38,9 +35,15 @@ function Settings({route}) {
             leftIcon={{name: item.icon}}
             bottomDivider
             chevron
-            onPress={() => setToken(null)}
           />
         ))}
+        <ListItem
+          title="Sair"
+          leftIcon={{name: 'close'}}
+          bottomDivider
+          chevron
+          onPress={() => setToken(null)}
+        />
       </View>
     </View>
   );

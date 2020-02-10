@@ -1,7 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-
+import {StyleSheet, Text, View, Image} from 'react-native';
 import FBLoginButton from '../components/FBLoginButton';
 import UserProfileData from '../types/UserProfileData';
 
@@ -16,7 +14,7 @@ const Login = ({route}) => {
     <View style={styles.mainView}>
       <View style={styles.topArea} />
       <View style={styles.logoArea}>
-        <Icon name="grav" size={150} color="#A01C08" />
+        <Image source={require('../assets/planet.png')} style={styles.logo} />
         <Text style={styles.logoTitle}>Marte</Text>
       </View>
       <View style={styles.facebookButton}>
@@ -44,13 +42,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center',
-    color: '#A01C08',
+    color: '#23546A',
+    paddingTop: 10,
   },
   facebookButton: {
     flex: 3,
     paddingLeft: 15,
     paddingRight: 15,
   },
+  logo: {width: 200, height: 200},
 });
 
 export default Login;

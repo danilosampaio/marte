@@ -19,7 +19,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-        {!token || !userProfile? (
+        {!token || !userProfile ? (
           <Stack.Screen
             name="Login"
             component={Login}

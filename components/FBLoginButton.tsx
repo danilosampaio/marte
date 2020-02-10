@@ -30,7 +30,7 @@ const FBLoginButton = (props: FBButtonProps) => {
   const getUserInfo = (accessToken: AccessToken) => {
     const fields = profileFields
       ? profileFields.join(',')
-      : 'name,email,picture';
+      : 'name,email,picture.type(large)';
     const infoRequest = new GraphRequest(
       `/me?fields=${fields}`,
       null,
