@@ -5,11 +5,11 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import FBLoginButton from '../components/FBLoginButton';
 import UserProfileData from '../types/UserProfileData';
 
-const Login = ({navigation}) => {
-  const setUserInfo = (data: UserProfileData) => {
-    navigation.navigate('Main', {
-      userProfile: data,
-    });
+const Login = ({route}) => {
+  const {setUserProfile, setToken} = route.params;
+  const setUserInfo = (data: UserProfileData, token: string) => {
+    setUserProfile(data);
+    setToken(token);
   };
 
   return (

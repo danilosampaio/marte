@@ -8,7 +8,7 @@ import Settings from './Settings';
 const Tab = createBottomTabNavigator();
 
 const Main = ({route}) => {
-  const {userProfile} = route.params;
+  const {userProfile, setToken} = route.params;
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -33,7 +33,7 @@ const Main = ({route}) => {
       <Tab.Screen
         name="Settings"
         component={Settings}
-        initialParams={{userProfile}}
+        initialParams={{userProfile, setToken}}
       />
     </Tab.Navigator>
   );

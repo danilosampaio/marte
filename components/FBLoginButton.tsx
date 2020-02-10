@@ -16,21 +16,25 @@ interface FBButtonProps {
 const FBLoginButton = (props: FBButtonProps) => {
   const {onResponse, profileFields, permissions} = props;
 
-  const _responseInfoCallback = (error: object, result: object) => {
+  const _responseInfoCallback = (
+    error: object,
+    result: object,
+    accessToken: AccessToken,
+  ) => {
     if (error) {
       alert('Error fetching data: ' + error.toString());
     } else {
-      onResponse(result);
+      onResponse(result, accessToken);
     }
   };
-  const getUserInfo = () => {
+  const getUserInfo = (accessToken: AccessToken) => {
     const fields = profileFields
       ? profileFields.join(',')
       : 'name,email,picture';
     const infoRequest = new GraphRequest(
       `/me?fields=${fields}`,
       null,
-      _responseInfoCallback,
+      (error, result) => _responseInfoCallback(error, result, accessToken),
     );
     // Start the graph request.
     new GraphRequestManager().addRequest(infoRequest).start();
@@ -43,8 +47,8 @@ const FBLoginButton = (props: FBButtonProps) => {
         if (result.isCancelled) {
           alert('Login cancelled')
         } else {
-          AccessToken.getCurrentAccessToken().then(() => {
-            getUserInfo();
+          AccessToken.getCurrentAccessToken().then(accessToken => {
+            getUserInfo(accessToken);
           });
         }
       },

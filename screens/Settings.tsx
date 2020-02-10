@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Avatar, ListItem} from 'react-native-elements';
 
 function Settings({route}) {
-  const {userProfile} = route.params;
+  const {userProfile, setToken} = route.params;
 
   const list = [
     {
@@ -38,6 +38,7 @@ function Settings({route}) {
             leftIcon={{name: item.icon}}
             bottomDivider
             chevron
+            onPress={() => setToken(null)}
           />
         ))}
       </View>
