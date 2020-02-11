@@ -14,7 +14,10 @@ const Login = ({route}) => {
     <View style={styles.mainView}>
       <View style={styles.topArea} />
       <View style={styles.logoArea}>
-        <Image source={require('../assets/planet.png')} style={styles.logo} />
+        <Image
+          source={require('../assets/astronaut.png')}
+          style={styles.logo}
+        />
         <Text style={styles.logoTitle}>Marte</Text>
       </View>
       <View style={styles.facebookButton}>
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-around',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#23546A',
   },
   topArea: {
     flex: 3,
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center',
-    color: '#23546A',
+    color: '#ffffff',
     paddingTop: 10,
   },
   facebookButton: {
