@@ -6,6 +6,7 @@ import {
   GraphRequestManager,
   LoginManager,
 } from 'react-native-fbsdk';
+import {Alert} from 'react-native';
 
 interface FBButtonProps {
   onResponse: Function;
@@ -16,18 +17,32 @@ interface FBButtonProps {
 const FBLoginButton = (props: FBButtonProps) => {
   const {onResponse, profileFields, permissions} = props;
 
+  const showErrorAlert = (error: object) => {
+    Alert.alert(
+      'Erro fazer login',
+      error.toString(),
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel',
+        },
+      ],
+      {cancelable: false},
+    );
+  };
+
   const _responseInfoCallback = (
-    error: object,
-    result: object,
-    accessToken: AccessToken,
+    error: object | undefined,
+    result: object | undefined,
+    accessToken: AccessToken | null,
   ) => {
     if (error) {
-      alert('Error fetching data: ' + error.toString());
+      showErrorAlert(error);
     } else {
       onResponse(result, accessToken);
     }
   };
-  const getUserInfo = (accessToken: AccessToken) => {
+  const getUserInfo = (accessToken: AccessToken | null) => {
     const fields = profileFields
       ? profileFields.join(',')
       : 'name,email,picture.type(large)';
@@ -45,15 +60,15 @@ const FBLoginButton = (props: FBButtonProps) => {
     LoginManager.logInWithPermissions(loginPermissions).then(
       (result: {isCancelled: boolean}) => {
         if (result.isCancelled) {
-          alert('Login cancelled')
+          _responseInfoCallback(new Error('Login cancelled'), result, null);
         } else {
           AccessToken.getCurrentAccessToken().then(accessToken => {
             getUserInfo(accessToken);
           });
         }
       },
-      (error: string) => {
-        alert('Login fail with error: ' + error)
+      error => {
+        showErrorAlert(error);
       },
     );
   };
