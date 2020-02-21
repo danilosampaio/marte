@@ -1,17 +1,39 @@
 # Marte
-Aplicativo construído com React-native com funcionalidades comuns à maioria das aplicações reais: login com facebook, menu principal, formulários, notificações, etc.
+React-native Template com funcionalidades comuns à maioria das aplicações reais: login com facebook, menu principal, formulários, notificações, etc.
+
 
 ## Overview
 
 O objetivo desse projeto é fornecer um template básico com funcionalidades que geralmente são necessárias em projetos mobile (login com facebook, formulários, notificações, etc.) mas que dão bastatente trabalho para funcionar de primeira, seja devido à configurações de módulos nativos, ou peculiaridades de versões do SDK, etc. Além de servir como base para criação de outras aplicações, esse projeto também explica o passo à passo de configuração, instalação, e execução desses recursos.
 
+
 ## Features
 
-1. Login com Facebook
+| Login com Facebook | Menu de Navegação | Compenentes visuais |
+| --- | --- | --- |
+| ![](assets/login.jpg) | ![](assets/home.jpg) | ![](assets/settings.jpg) |
 
-2. Formulários
 
-3. Notificações
+## Criando seu Projeto à partir do template
+
+> Antes de criar o projeto, veja se seu ambiente de desenvolvimento e execução está pronto, confome itens __1__ e __2__ da seção __Setup do projeto__
+
+```sh
+npx react-native init MyApp --template react-native-template-marte
+```
+
+```sh
+cd MyApp
+```
+
+```sh
+npm start
+```
+
+```sh
+npx react-native run-android
+```
+
 
 ## Frameworks/libs
 > Os itens abaixo ainda podem ser revisados, tendo em vista que o projeto está em fase de gestação.
@@ -31,25 +53,6 @@ O objetivo desse projeto é fornecer um template básico com funcionalidades que
 5. React-navigation
   > Biblioteca que facilita a implementação da navegação entre telas.
 
-## Install and run
-
-> Antes de instalar/executar o projeto, veja se seu ambiente de desenvolvimento e execução está pronto, confome itens __1__ e __2__ da seção __Setup do projeto__
-
-```sh
-git clone git@github.com:danilosampaio/marte.git
-```
-
-```sh
-npm install
-```
-
-```sh
-npm start
-```
-
-```sh
-npx react-native run-android
-```
 
 ## Passo à passo de construção do projeto
 > Essa seção descreve como todas as funcionalidades foram configuradas e construídas, permitindo um entendimento para construir outras aplicações à partir desse template.
@@ -127,6 +130,39 @@ Todos são bem vindos à contribuir com o projeto, seja com o codificação, doc
   - As alterações devem ser feitas em um branch específico da sua alteração, e após revisão ser `merged`ao branch master.
   
   - Antes de um pull request, discuta com os demais membros contribuintes do projeto através issues, chat, etc., para evitar trabalho jogado fora.
+
+## Troubleshooting
+
+> Erro de Build
+
+```
+> Task :app:transformNativeLibsWithMergeJniLibsForDebug FAILED
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 
+6.0.
+...
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:transformNativeLibsWithMergeJniLibsForDebug'.
+> java.io.StreamCorruptedException: invalid stream header: EFBFBDEF
+```
+> Solução
+
+```shell
+cd android && ./gradlew clean
+```
+
+> Erro ao carregar aplicativo
+
+```
+react-native invariant violation: "MyAppName" has not been registered
+...
+```
+
+> Solução
+
+Observe o nome do aplicativo que está sendo exibido na mensagem, deve estar exatamente igual à propriedade `name` do arquivo `app.json`.
 
 ## License
 
