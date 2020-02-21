@@ -114,7 +114,7 @@ keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore |
 O ponto importante aqui é: o path do arquivo `~/.android/debug.keystore` na verdade deve ser o arquivo gerado pelo react-native-cli, que ficam em `./android/app/debug.keystore`, considerando que você está na raiz do projeto.
 Outro detalhe é que a partir do passo `8. Adicione o botão login do Facebook`, não é relevante para o nosso projeto, pois não estamos utilizando a API Java para codificar.
 
-A autenticação do usuário e a recuperação de informações como nome, email, foto, está implementada no component [FBLoginButton](components/FBLoginButton.tsx).
+A autenticação do usuário e a recuperação de informações como nome, email, foto, está implementada no component [FBLoginButton](template/components/FBLoginButton.tsx).
 
 ## Contributing
 
