@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect} from 'react';
 
 import 'react-native-gesture-handler';
 
@@ -9,6 +10,7 @@ import Login from './screens/Login';
 import Main from './screens/Main';
 import UserProfileData from './types/UserProfileData';
 import {AccessToken} from 'react-native-fbsdk';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +18,10 @@ const App = () => {
   const [userProfile, setUserProfile] = React.useState<UserProfileData>();
   const [token, setToken] = React.useState<AccessToken>();
 
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+  
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
