@@ -1,6 +1,6 @@
 {
   "name": "react-native-template-marte",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template react-native com funcionalidades básicas como login, navegação entre telas, etc.",
   "files": [
     "template",
