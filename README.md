@@ -1,8 +1,5 @@
 ![](assets/marte_readme_header.png)
 
-# Marte
-React-native Template com funcionalidades comuns à maioria das aplicações reais: login com facebook, menu principal, formulários, notificações, etc.
-
 
 ## Overview
 
