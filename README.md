@@ -132,7 +132,30 @@ Todos são bem vindos à contribuir com o projeto, seja com o codificação, doc
 
 ## Troubleshooting
 
-> Erro de Build
+> __Erro do path do Android SDK__
+
+```
+error Failed to install the app. Make sure you have the Android development environment set up: https://facebook.github.io/react-native/docs/getting-started.html#android-development-environment. Run CLI with --verbose flag for more details.
+Error: Command failed: gradlew.bat app:installDebug -PreactNativeDevServerPort=8081
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring project ':app'.
+> The SDK directory 'C:\Users\username\Documents\myproject\android\Android\Sdk' does not exist.
+```
+
+> __Solução__
+
+Configure o Android SDK no arquivo `android\local.properties`:
+
+Exemplo no Windows: `sdk.dir=C:\\Users\\username\\AppData\\Local\\Android\\Sdk` 
+
+Exemplo linux: `sdk.dir=/home/username/Android/Sdk`
+
+
+
+> __Erro de Build__
 
 ```
 > Task :app:transformNativeLibsWithMergeJniLibsForDebug FAILED
@@ -146,20 +169,20 @@ FAILURE: Build failed with an exception.
 Execution failed for task ':app:transformNativeLibsWithMergeJniLibsForDebug'.
 > java.io.StreamCorruptedException: invalid stream header: EFBFBDEF
 ```
-> Solução
+> __Solução__
 
 ```shell
 cd android && ./gradlew clean
 ```
 
-> Erro ao carregar aplicativo
+> __Erro ao carregar aplicativo__
 
 ```
 react-native invariant violation: "MyAppName" has not been registered
 ...
 ```
 
-> Solução
+> __Solução__
 
 Observe o nome do aplicativo que está sendo exibido na mensagem, deve estar exatamente igual à propriedade `name` do arquivo `app.json`.
 
